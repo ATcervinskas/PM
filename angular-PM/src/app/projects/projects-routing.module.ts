@@ -12,11 +12,11 @@ import { ViewProjectsComponent } from './view-projects/view-projects.component';
 const routes: Routes = [
   { path: '', component: ProjectsComponent },
   { path: 'create-project', component: CreateProjectComponent },
-  { path: 'delete-project', component: DeleteProjectComponent },
-  { path: 'projects-by-category', component: ProjectsByCategoryComponent },
-  { path: 'projects-by-date', component: ProjectsByDateComponent },
-  { path: 'update-project', component: UpdateProjectComponent },
-  { path: 'view-projects', component: ViewProjectsComponent },
+  { path: 'delete-project/:id', component: DeleteProjectComponent },
+  { path: 'search-category', component: ProjectsByCategoryComponent },
+  { path: 'search-date', component: ProjectsByDateComponent },
+  { path: 'update-project/:id', component: UpdateProjectComponent },
+  { path: 'view-project/:id', component: ViewProjectsComponent },
   { path: 'view-all-projects', component: ViewAllProjectsComponent },
 
 ];
