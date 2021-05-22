@@ -1,10 +1,9 @@
 export interface Project {
-    projectId:string;
-    description:string;
-    categoryId:number;
-    projectName:string;
+    projectId:number;
+    projectName: string;
+    description: string;
+    category: string;
     duration:string;
-    startDate:Date;
-    endDate:Date;
-
+    assigned:string;
+    
 }

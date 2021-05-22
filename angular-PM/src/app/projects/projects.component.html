@@ -23,15 +23,14 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Project1</td>
-                        <td>Comercial</td>
-                        <td>Arturas</td>
-                        <td>60 days</td>
-                        <td>date</td>
-                        <td>date</td>
-                        <td>Learum cum adipisci.</td>
-                        
+                    <tr *ngFor="let i of projectsList">
+                        <td>{{i.projectName}}</td>
+                        <td>{{i.category}}</td>
+                        <td>{{i.assigned}}</td>
+                        <td>{{i.duration}}</td>
+                        <td>{{i.startDate}}</td>
+                        <td>{{i.endDate}}</td>
+                        <td>{{i.description}}</td>                        
                     </tr>
                     <tr>
                 </tbody>

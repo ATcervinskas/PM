@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import  {HttpClient} from '@angular/common/http';
 import {Project} from './project'
+import {Categories} from './categories';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -13,6 +14,11 @@ export class ProjectsService {
   createProject(projectBody):Observable<Project>{
     const projectUrl ='http://localhost:3000/projects';
     return this.httpClient.post<Project>(projectUrl,projectBody);
+  }
+
+  getCategories():Observable<Categories>{
+    const categoryUrl ='http://localhost:3000/categories'
+    return this.httpClient.get<Categories>(categoryUrl);
   }
 
   viewProject(projectId):Observable<Project>{
@@ -39,8 +45,8 @@ export class ProjectsService {
     return this.httpClient.get<Project>(projectUrl);
   }
 
-  viewAllProjects(projectId):Observable<Project>{
-    const projectUrl ='http://localhost:3000/projects/'+projectId;
+  viewAllProjects():Observable<Project>{
+    const projectUrl ='http://localhost:3000/projects';
     return this.httpClient.get<Project>(projectUrl);
   }
 }
