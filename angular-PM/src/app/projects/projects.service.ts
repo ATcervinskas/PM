@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import  {HttpClient} from '@angular/common/http';
 import {Project} from './project'
+import {Tasks} from './tasks'
 import {Categories} from './categories';
 import { Observable } from 'rxjs';
 
@@ -19,6 +20,11 @@ export class ProjectsService {
   getCategories():Observable<Categories>{
     const categoryUrl ='http://localhost:3000/categories'
     return this.httpClient.get<Categories>(categoryUrl);
+  }
+
+  getTasks():Observable<Tasks>{
+    const categoryUrl ='http://localhost:3000/tasks'
+    return this.httpClient.get<Tasks>(categoryUrl);
   }
 
   viewProject(projectId):Observable<Project>{

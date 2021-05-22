@@ -24,7 +24,7 @@
                 </thead>
                 <tbody>
                     <tr *ngFor="let i of projectsList">
-                        <td>{{i.projectName}}</td>
+                        <td><a routerLink="view-project/{{i.projectId}}">{{i.projectName}}</a></td>
                         <td>{{i.category}}</td>
                         <td>{{i.assigned}}</td>
                         <td>{{i.duration}}</td>
