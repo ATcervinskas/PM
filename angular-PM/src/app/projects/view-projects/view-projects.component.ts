@@ -31,11 +31,6 @@ export class ViewProjectsComponent implements OnInit {
 
     this.projectsServices.viewAllProjects().subscribe(data=>{
       this.projectsList=data;
-     for(let i of this.projectsList){
-       if(i.projectId==this.projectId){
-         this.projectName=i.projectName;
-       }
-     }
     });
     
   
