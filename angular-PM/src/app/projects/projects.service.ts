@@ -17,11 +17,6 @@ export class ProjectsService {
     return this.httpClient.post<Project>(projectUrl,projectBody);
   }
 
-  getCategories():Observable<Categories>{
-    const categoryUrl ='http://localhost:3000/categories'
-    return this.httpClient.get<Categories>(categoryUrl);
-  }
-
   getTasks():Observable<Tasks>{
     const categoryUrl ='http://localhost:3000/tasks'
     return this.httpClient.get<Tasks>(categoryUrl);

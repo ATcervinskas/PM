@@ -15,6 +15,7 @@ export class ViewProjectsComponent implements OnInit {
   tasksList:Tasks;
   projectName;
   projectsList;
+  projectDetails;
 
   constructor(private activatedRoute:ActivatedRoute,
               private projectsServices:ProjectsService) { }
@@ -23,6 +24,11 @@ export class ViewProjectsComponent implements OnInit {
 
     this.activatedRoute.params.subscribe(data=>{
       this.projectId=data.id;
+
+      this.projectsServices.viewProject(this.projectId).subscribe(data=>{
+        this.projectDetails=data;
+  
+      });
     });
     
     this.projectsServices.getTasks().subscribe(data=>{

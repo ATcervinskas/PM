@@ -1,61 +1,51 @@
 {
-    "projects": [
-      { 
-        "projectId": 1, 
-        "categoryId":1,
-        "projectName": "ProjectName1",
-        "description": "description",
-        "category": "Commercial",
-        "duration":"60h",
-        "assigned":"arturas",
-        "startDate":"date",
-        "endDate":"date"
-      },
-      { 
-        "projectId": 2, 
-        "categoryId":2,
-        "projectName": "ProjectName2",
-        "description": "description2",
-        "category": "Commercial2",
-        "duration":"60h2",
-        "assigned":"arturas2",
-        "startDate":"date2",
-        "endDate":"date2",
-        "tasks":{
-
-        }
-      }
-    ],
-
-    "categories": [
-      { 
-        "categoryId": 1, 
-        "categoryName": "Commercial"
-      },
-      { 
-        "categoryId": 2, 
-        "categoryName": "Tecnology"
-      }
-    ],
-
-    "tasks": [
-      { 
-        "projectId": 1, 
-        "taskId":1,
-        "description":"task 1"
-      },
-      { 
-        "projectId": 2, 
-        "taskId":2,
-        "description":"task 2"
-      },
-      { 
-        "projectId": 2, 
-        "taskId":3,
-        "description":"task 3"
-      }
-
-
-    ]
-   
-  }
+  "projects": [
+    {
+      "projectName": "ProjectName1",
+      "description": "description",
+      "category": "Commercial",
+      "duration": "60h",
+      "startDate": "date",
+      "endDate": "date",
+      "id": 1
+    },
+    {
+      "id": 2,
+      "projectId": 2,
+      "categoryId": 2,
+      "projectName": "ProjectName2",
+      "description": "description2",
+      "category": "Commercial2",
+      "duration": "60h2",
+      "assigned": "arturas2",
+      "startDate": "date2",
+      "endDate": "date2"
+    },
+    {
+      "projectName": "ProjectName3",
+      "description": "testtesttesttestte",
+      "category": "Namai",
+      "duration": "30 min",
+      "startDate": "dabar",
+      "endDate": "ProjectName3",
+      "id": 3
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "description": "task 1",
+      "project": 2
+    },
+    {
+      "id": 2,
+      "description": "task 2",
+      "project": 2
+    },
+    {
+      "id": 2,
+      "descriptiongn": "task 3",
+      "project": 2
+    }
+  ]
+}

@@ -11,9 +11,7 @@ export class ProjectsByCategoryComponent implements OnInit {
   constructor(private activatedRoute:ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.activatedRoute.queryParams.subscribe(data=>{
-      this.searchCategory=data.category;
-    });
+  
   }
 
 }

@@ -22,10 +22,7 @@ export class AppComponent {
       $("#wrapper").toggleClass("toggled");
     });
 
-    this.projectsServices.getCategories().subscribe(data=>{
-      this.categoryList=data;
-    })
-
+  
     this.projectsServices.viewAllProjects().subscribe(data=>{
       this.projectsList=data;
     });

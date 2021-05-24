@@ -5,5 +5,7 @@ export interface Project {
     category: string;
     duration:string;
     assigned:string;
+    startDate:Date;
+    endDate:Date;
     
 }

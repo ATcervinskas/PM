@@ -10,6 +10,7 @@ import { ViewAllProjectsComponent } from './view-all-projects/view-all-projects.
 import { UpdateProjectComponent } from './update-project/update-project.component';
 import { ProjectsByDateComponent } from './projects-by-date/projects-by-date.component';
 import { ProjectsByCategoryComponent } from './projects-by-category/projects-by-category.component';
+import {FormsModule,NgForm,ReactiveFormsModule} from '@angular/forms';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import { ProjectsByCategoryComponent } from './projects-by-category/projects-by-
   ],
   imports: [
     CommonModule,
+    FormsModule,
     ProjectsRoutingModule
   ]
 })

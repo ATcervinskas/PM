@@ -1,2 +1,43 @@
-<p>update-project works!</p>
-{{projectId}}
+<div class="container-sm bg-light mt-4">
+    <h1>Update Project</h1>
+    <form (submit)="updateProject(updateForum)" #updateForum="ngForm">
+        <div class="row">
+            <div class="col">
+                <div class="mb-3">
+                    <label for="ProjectName" class="form-label">Project Name</label>
+                    <input type="text" class="form-control"[(ngModel)]=projectDetails.projectName required name="project_name" ngModel>
+                </div>
+            </div>
+            <div class="col">
+                <label for="ProjectDescription">Project description</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="2" [(ngModel)]=projectDetails.description required name="project_description" ngModel></textarea>
+              </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <label for="ProjectCategory" class="form-lable">Category</label>
+                <input type="text" class="form-control"[(ngModel)]=projectDetails.category required name="project_category" ngModel>
+            </div>
+                <div class="col">
+                    <label for="ProjectDuration" class="form-lable">Duaration</label>
+                    <input type="text" class="form-control" [(ngModel)]=projectDetails.duration required name="project_duration" ngModel>
+                </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <label for="ProjectCategory" class="form-lable">Project start date</label>
+                <input type="text" class="form-control" [(ngModel)]=projectDetails.startDate required name="project_startDate" ngModel>
+            </div>
+                <div class="col">
+                    <label for="ProjectDuration" class="form-lable">Project end date</label>
+                    <input type="text" class="form-control" [(ngModel)]=projectDetails.projectName required name="project_endDate" ngModel>
+                </div>
+        </div>
+    
+        <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
