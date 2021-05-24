@@ -17,7 +17,13 @@ export class ProjectsComponent implements OnInit {
       this.projectsList=data;
     });
   }
-
+  deleteProject(projectId){
+   this.projectsService.deleteProject(projectId).subscribe(data=>{
+   });
+  }
+  updateProject(projecId){
+     this.router.navigate(['/projects/update-project/'+projecId])
+  }
   createProject(){
     this.router.navigate(['/projects/create-project'])
   }

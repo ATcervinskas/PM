@@ -1,15 +1,6 @@
 {
   "projects": [
     {
-      "projectName": "ProjectName1",
-      "description": "description",
-      "category": "Commercial",
-      "duration": "60h",
-      "startDate": "date",
-      "endDate": "date",
-      "id": 1
-    },
-    {
       "id": 2,
       "projectId": 2,
       "categoryId": 2,

@@ -19,7 +19,7 @@
                         <th>Duration</th>
                         <th>Start date</th>
                         <th>End date</th>
-                        <th>Notes</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -30,7 +30,10 @@
                         <td>{{i.duration}}</td>
                         <td>{{i.startDate}}</td>
                         <td>{{i.endDate}}</td>
-                        <td>{{i.description}}</td>                        
+                        <td>
+                            <i class="bi bi-pencil-square edit" (click)="updateProject(i.id)"></i>
+                            <i class="bi bi-trash trash" (click)="deleteProject(i.id)"></i>
+                        </td>                      
                     </tr>
                     <tr>
                 </tbody>
