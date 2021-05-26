@@ -24,9 +24,10 @@ export class CreateProjectComponent implements OnInit {
       startDate:form.value.project_startDate,
       endDate:form.value.project_endDate,
     };
+  
 
     this.projectsService.createProject(newProject).subscribe(data=>{
-      console.log(data)
+      
     });
   }
 

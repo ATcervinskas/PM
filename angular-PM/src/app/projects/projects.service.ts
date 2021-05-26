@@ -50,4 +50,8 @@ export class ProjectsService {
     const projectUrl ='http://localhost:3000/projects';
     return this.httpClient.get<Project>(projectUrl);
   }
+  createTask(taskBody):Observable<Tasks>{
+    const projectUrl='http://localhost:3000/tasks';
+    return this.httpClient.post<Tasks>(projectUrl,taskBody);
+  }
 }

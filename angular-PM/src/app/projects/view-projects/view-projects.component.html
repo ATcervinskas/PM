@@ -1,64 +1,69 @@
-<div class="container-fluid " *ngFor="let i of projectsList">
-    <div class="row list-project  " *ngIf="i.id==projectId">
-        <div class="col-md-7 mt-4">
-            <img src="https://via.placeholder.com/400x300/FFB6C1/000000" alt="project-image" class="rounded tablet-top">
-        </div>
-  
-        <div class="col-md-5 mt-4">
-            <div class="project-info-box mt-0">
-                <h5>{{i.projectName}}</h5>
-                <p>{{i.description}}</p>
-            </div>
-        
-            <div class="project-info-box mb-10">
-                <p><b>Category:</b> {{i.category}} </p>
-                <p><b>Start Date:</b> {{i.startDate}}</p>
-                <p><b>End Date:</b> {{i.endDate}}</p>
-                <p><b>Duration:</b> {{i.duration}}</p>
-                <p><b>Peoples Assigned:</b> {{i.assigned}}</p>
-                
-            </div>
-            <a href="projects/update-project/{{projectDetails.id}}" class="btn btn-primary d-block"> Update</a>
-        </div>
-      
-    </div>
-</div>
 
-
-<div class="container-fluid">
-    
-    <div class="row">
-        <div class="col-md-6">
-            <div class="todolist not-done" >
-                <ng-container *ngFor="let i of projectsList" >
-                    <h4 *ngIf="i.id==projectId"> </h4>
-                </ng-container>
-                <input type="text" class="form-control add-todo" placeholder="Add todo">
-                    <button id="checkAll" class="btn btn-success">Mark all as done</button>
-                    
-                    <hr>
-                    <ul id="sortable" class="list-unstyled" *ngFor="let i of tasksList">
-                    <li class="ui-state-default" *ngIf="i.project==projectId">
-                        <div class="checkbox">
-                            <label>
-                                <input type="checkbox" value="" /> {{i.description}}</label>
+<div class="container-fluid border rounded ">
+    <div class="row pb-2">
+            <div class="col-md-7 pr-0 bg mb-0 rounded mr-0 pr-3 border">
+                <div class="col ">
+                    <div class=" h1  text-success text-center mx-auto display-inline-block ">
+                        <i class="bi bi-check2-square  text-green rounded "></i>
+                        <u class="h2">Project Todo-s</u>
+                    </div>
+                </div>
+                <div class="row ">
+                    <div class="col">
+                        <div class="forum-group">
+                            <form #addTaskForum="ngForm" (keyup.enter)="addTask(addTaskForum)" novalidate>
+                                <div class="input-group mb-2">
+                                    <input name="task_description" class="form-control rounded pl-4" ngModel required #task_description="ngModel" placeholder="New task">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-outline-success fw" type="button">add</button>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
-                    </li>
-                   
-                </ul>
-                <div class="todo-footer">
-                    <strong><span class="count-todos"></span></strong> Items Left
+                    </div>
+                    
+                </div>
+                <div class="row mr-0 ml-0">
+                    <div class="col bg-white rounded border pl-0 pr-0">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item d-flex">
+                                    <div class="form-check mr-auto">
+                                        <input class="form-check-input margin" type="checkbox" value="" id="defaultCheck1">
+                                        <label class="form-check-label" for="defaultCheck1">
+                                        <h6 class="">Example</h6>
+                                        </label>
+                                    </div>
+                                    <div class="">
+                                        <i class="bi bi-x-square trash "></i>
+                                    </div>
+                            </li>
+
+                          </ul>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-md-6">
-            <div class="todolist">
-             <h1>Already Done</h1>
-                <ul id="done-items" class="list-unstyled">
-                    <li>Some item <button class="remove-item btn btn-default btn-xs pull-right"><span class="glyphicon glyphicon-remove"></span></button></li>
+        <div class="col">
+            <ng-container *ngFor="let i of projectsList">  
+                <div class="row list-project  " *ngIf="i.id==projectId">
+                    <div class="col mt-2 padding">
+                        <div class="project-info-box mt-0 border">
+                            <h5 class="text-info text-monospace fw">{{i.projectName}}</h5>
+                            <hr>
+                            <p class="text-monospace text-size">{{i.description}}</p>
+                        </div>
                     
-                </ul>
-            </div>
+                        <div class="project-info-box border ">
+                            <p><b>Category:</b> {{i.category}} </p>
+                            <p><b>Start Date:</b> {{i.startDate}}</p>
+                            <p><b>End Date:</b> {{i.endDate}}</p>
+                            <p><b>Duration:</b> {{i.duration}}</p>
+                            <p><b>Peoples Assigned:</b> {{i.assigned}}</p>
+                            
+                        </div>
+                        <a href="projects/update-project/{{projectDetails.id}}" class="btn btn-primary d-block"> Update</a>
+                    </div>
+                </div>
+            </ng-container>
         </div>
     </div>
 </div>

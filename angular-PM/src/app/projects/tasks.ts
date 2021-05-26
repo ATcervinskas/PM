@@ -1,5 +1,4 @@
 export interface Tasks {
-        projectId: number;
-        taskId:number;
-        Description:string;
+        project: number;
+        description:string;
 }

@@ -13,6 +13,7 @@ import { ProjectsByCategoryComponent } from './projects-by-category/projects-by-
 import {FormsModule,NgForm,ReactiveFormsModule} from '@angular/forms';
 
 
+
 @NgModule({
   declarations: [
     ProjectsComponent,
@@ -27,7 +28,8 @@ import {FormsModule,NgForm,ReactiveFormsModule} from '@angular/forms';
   imports: [
     CommonModule,
     FormsModule,
-    ProjectsRoutingModule
+    ProjectsRoutingModule,
+  
   ]
 })
 export class ProjectsModule { }

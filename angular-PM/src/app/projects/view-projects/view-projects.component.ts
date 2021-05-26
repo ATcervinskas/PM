@@ -3,6 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import { Tasks } from '../tasks';
 import {ProjectsService} from '../projects.service';
 import { Project } from '../project';
+import { NgForm } from '@angular/forms';
+
 
 @Component({
   selector: 'app-view-projects',
@@ -16,6 +18,7 @@ export class ViewProjectsComponent implements OnInit {
   projectName;
   projectsList;
   projectDetails;
+  taskDescription:string='';
 
   constructor(private activatedRoute:ActivatedRoute,
               private projectsServices:ProjectsService) { }
@@ -40,6 +43,17 @@ export class ViewProjectsComponent implements OnInit {
     });
     
   
+  }
+
+  addTask(formValue:NgForm){
+    let newTask={
+      description:formValue.value.task_description,
+      project:this.projectId
+    };
+    
+    this.projectsServices.createTask(newTask).subscribe(data=>{
+      
+     })
   }
 
   
