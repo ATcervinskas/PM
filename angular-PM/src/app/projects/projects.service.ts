@@ -17,8 +17,8 @@ export class ProjectsService {
     return this.httpClient.post<Project>(projectUrl,projectBody);
   }
 
-  getTasks():Observable<Tasks>{
-    const categoryUrl ='http://localhost:3000/tasks'
+  getTasks(project):Observable<Tasks>{
+    const categoryUrl ='http://localhost:3000/tasks?project='+project;
     return this.httpClient.get<Tasks>(categoryUrl);
   }
 
@@ -53,5 +53,13 @@ export class ProjectsService {
   createTask(taskBody):Observable<Tasks>{
     const projectUrl='http://localhost:3000/tasks';
     return this.httpClient.post<Tasks>(projectUrl,taskBody);
+  }
+  deleteTask(taskId):Observable<Tasks>{
+    const projectUrl ='http://localhost:3000/tasks/'+taskId;
+    return this.httpClient.delete<Tasks>(projectUrl);
+  }
+  updateTask(taskid, body):Observable<Project>{
+    const projectUrl ='http://localhost:3000/tasks/'+taskid;
+    return this.httpClient.put<Project>(projectUrl,body);
   }
 }

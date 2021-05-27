@@ -3,7 +3,7 @@
     <div class="bg-light border-right" id="sidebar-wrapper">
       <div class="sidebar-heading">ProjectManagment </div>
       <div class="list-group list-group-flush">
-        <a  routerLink="projects/view-project/{{i.id}}" class="list-group-item list-group-item-action bg-light"  *ngFor="let i of projectsList">{{i.projectName}} </a>
+        <a type="button" *ngFor="let i of projectsList" (click)="navLinks(i.id)" class="list-group-item list-group-item-action bg-light">{{i.projectName}} </a>
       </div>
     </div>
     <!-- /#sidebar-wrapper -->

@@ -1,9 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Tasks } from '../tasks';
 import {ProjectsService} from '../projects.service';
 import { Project } from '../project';
 import { NgForm } from '@angular/forms';
+import { DOCUMENT } from '@angular/common';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -13,48 +15,93 @@ import { NgForm } from '@angular/forms';
 })
 export class ViewProjectsComponent implements OnInit {
 
-  projectId=0;
+  projectId:number;
   tasksList:Tasks;
   projectName;
   projectsList;
   projectDetails;
   taskDescription:string='';
+  colors={
+    green:"#d1e7dd",
+    red:"#f8d7da",
+    yellow:"#fff3cd",
+    blue:"#cff4fc",
+    grey:"#d6d8db"
+  };
+
+
+  page = 1;
+  count = 0;
+  tableSize = 6;
+  tableSizes = [3, 6, 9, 12];
+
 
   constructor(private activatedRoute:ActivatedRoute,
+    @Inject(DOCUMENT) private _document: Document,
               private projectsServices:ProjectsService) { }
 
   ngOnInit(): void {
+    
 
     this.activatedRoute.params.subscribe(data=>{
       this.projectId=data.id;
 
       this.projectsServices.viewProject(this.projectId).subscribe(data=>{
         this.projectDetails=data;
-  
       });
     });
     
-    this.projectsServices.getTasks().subscribe(data=>{
+    this.projectsServices.getTasks(this.projectId).subscribe(data=>{
       this.tasksList=data;
     });
 
     this.projectsServices.viewAllProjects().subscribe(data=>{
       this.projectsList=data;
     });
-    
-  
   }
 
   addTask(formValue:NgForm){
     let newTask={
       description:formValue.value.task_description,
-      project:this.projectId
+      project:this.projectId,
+      color:"white"
     };
-    
-    this.projectsServices.createTask(newTask).subscribe(data=>{
-      
-     })
+    if(typeof newTask.description!='undefined'&& newTask.description) {
+      this.projectsServices.createTask(newTask).subscribe(data=>{
+      })
+    }else{
+      return
+    }
+   
+  }
+  deleteTask(taskId){
+    this.projectsServices.deleteTask(taskId).subscribe(data=>{
+
+    })
+  }
+  onTableDataChange(event){
+    this.page = event;
+    this.projectsServices.getTasks(this.projectId).subscribe(data=>{
+      this.tasksList=data;
+    });
+  }
+  onTableSizeChange(event): void {
+    this.tableSize = event.target.value;
+    this.page = 1;
+    this.projectsServices.getTasks(this.projectId).subscribe(data=>{
+      this.tasksList=data;
+    });
+  }
+  changeTaskcolor(taskId,c,d){
+    let taskcolor={
+      id:taskId,
+      project: this.projectId,
+      description:d,
+      color:c
+    }
+    this.projectsServices.updateTask(taskId,taskcolor).subscribe(data=>{
+      console.log(data);
+    });
   }
 
-  
 }

@@ -11,6 +11,9 @@ import { UpdateProjectComponent } from './update-project/update-project.componen
 import { ProjectsByDateComponent } from './projects-by-date/projects-by-date.component';
 import { ProjectsByCategoryComponent } from './projects-by-category/projects-by-category.component';
 import {FormsModule,NgForm,ReactiveFormsModule} from '@angular/forms';
+import { NgxPaginationModule } from 'ngx-pagination';
+
+
 
 
 
@@ -29,7 +32,7 @@ import {FormsModule,NgForm,ReactiveFormsModule} from '@angular/forms';
     CommonModule,
     FormsModule,
     ProjectsRoutingModule,
-  
+    NgxPaginationModule
   ]
 })
 export class ProjectsModule { }

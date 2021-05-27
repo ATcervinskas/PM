@@ -3,6 +3,7 @@ import * as $ from 'jquery';
 import { Categories } from './projects/categories';
 import { Project } from './projects/project';
 import {ProjectsService} from './projects/projects.service'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -13,7 +14,7 @@ export class AppComponent {
   title = 'angular-PM';
   categoryList:Categories
   projectsList:Project
-  constructor (private projectsServices:ProjectsService){}
+  constructor (private projectsServices:ProjectsService, private router:Router){}
 
   ngOnInit() {
     //Toggle Click Function
@@ -26,5 +27,12 @@ export class AppComponent {
     this.projectsServices.viewAllProjects().subscribe(data=>{
       this.projectsList=data;
     });
+  }
+
+  navLinks(id){
+    this.router.navigate(['projects/view-project/'+id])
+  .then(() => {
+    window.location.reload();
+  });
   }
 }

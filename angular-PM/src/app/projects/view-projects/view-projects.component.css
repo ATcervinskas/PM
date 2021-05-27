@@ -87,3 +87,18 @@ hr{
 .fw{
     font-weight: 500;
 }
+
+input[type=checkbox]:checked + label {
+	text-decoration: line-through;
+} 
+
+.testbc{
+    background-color: white;
+}
+
+.dropdown-menu {
+    min-width: 8rem !important;
+}
+.dropletbg{
+    color:rgb(32, 212, 9);
+}

@@ -1,64 +1,11 @@
 {
-  "projects": [
-    {
-      "id": 2,
-      "projectId": 2,
-      "categoryId": 2,
-      "projectName": "ProjectName2",
-      "description": "description2",
-      "category": "Commercial2",
-      "duration": "60h2",
-      "assigned": "arturas2",
-      "startDate": "date2",
-      "endDate": "date2"
-    },
-    {
-      "projectName": "ProjectName3",
-      "description": "testtesttesttestte",
-      "category": "Namai",
-      "duration": "30 min",
-      "startDate": "dabar",
-      "endDate": "ProjectName3",
-      "id": 3
-    }
-  ],
+  "projects": [],
   "tasks": [
     {
-      "id": 1,
-      "description": "task 1",
-      "project": 2
-    },
-    {
-      "id": 2,
-      "description": "task 2",
-      "project": 2
-    },
-    {
-      "id": 2,
-      "description": "task 3",
-      "project": 2
-    },
-    {
+      "id": 4,
       "project": "2",
-      "id": 3
-    },
-    {
-      "description": {},
-      "project": "2",
-      "id": 4
-    },
-    {
-      "description": {},
-      "project": "2",
-      "id": 5
-    },
-    {
-      "project": "2",
-      "id": 6
-    },
-    {
-      "project": "2",
-      "id": 7
+      "description": "test 1",
+      "color": "#d6d8db"
     }
   ]
 }

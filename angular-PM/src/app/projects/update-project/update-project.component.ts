@@ -34,7 +34,7 @@ projectDetails:Project={} as Project;
       startDate:form.value.project_startDate,
       endDate:form.value.project_endDate,
     };
-    console.log(form)
+  
     this.projectService.updateProject(this.projectId,updateProject).subscribe(data=>{
       console.log(data);
     });
