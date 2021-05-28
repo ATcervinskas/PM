@@ -29,10 +29,11 @@ projectDetails:Project={} as Project;
       id:form.value.id,
       projectName:form.value.project_name,
       description:form.value.project_description,
-      category:form.value.project_category,
-      duration:form.value.project_duration,
+      status:form.value.project_status,
+      progress:form.value.project_progress,
       startDate:form.value.project_startDate,
       endDate:form.value.project_endDate,
+      peoples:form.value.project_peoples,
     };
   
     this.projectService.updateProject(this.projectId,updateProject).subscribe(data=>{

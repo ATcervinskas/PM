@@ -15,23 +15,49 @@
     </div>
     <div class="row">
         <div class="col">
-            <label for="ProjectCategory" class="form-lable">Category</label>
-            <input type="text" class="form-control" required name="project_category" ngModel>
+            <label for="ProjectStatus" class="form-lable">Status</label>
+            <select type="text" class="form-control" required name="project_status" ngModel>
+                <option>New</option>
+                <option>Completed</option>
+                <option>Pending</option>
+                <option>Closed</option>
+            </select>
         </div>
             <div class="col">
-                <label for="ProjectDuration" class="form-lable">Duaration</label>
-                <input type="text" class="form-control" required name="project_duration" ngModel>
+                <label for="ProjectDuration" class="form-lable">Progress</label>
+                <select type="text" class="form-control" required name="project_progress" ngModel>
+                    <option>0%</option>
+                    <option>25%</option>  
+                    <option>50%</option>  
+                    <option>75%</option>  
+                    <option>100%</option>    
+                </select>
             </div>
     </div>
-    <div class="row">
+    <div class="row ">
         <div class="col">
             <label for="ProjectCategory" class="form-lable">Project start date</label>
-            <input type="text" class="form-control" required name="project_startDate" ngModel>
+            <div class="input-group ">
+                <input type="text" class="form-control  " placeholder="yyyy-mm-dd" ngbDatepicker #startDate="ngbDatepicker" required name="project_startDate" ngModel/>
+                <span class="input-group-text" (click)="startDate.open()"><i class="bi bi-calendar-check"></i></span>
+            </div>
         </div>
             <div class="col">
                 <label for="ProjectDuration" class="form-lable">Project end date</label>
-                <input type="text" class="form-control" required name="project_endDate" ngModel>
+                <div class="input-group ">
+                    <input type="text" class="form-control  " placeholder="yyyy-mm-dd" ngbDatepicker #endDate="ngbDatepicker" required name="project_endDate" ngModel/>
+                    <span class="input-group-text" (click)="endDate.open()"><i class="bi bi-calendar-check"></i></span>
+                </div>
             </div>
+        <div class="col">
+            <label for="ProjectPeoples" class="form-lable">Peoples</label>
+            <select type="text" class="form-control" required name="project_peoples" ngModel>
+                <option>Artūras</option>
+                <option>Jonas</option>
+                <option>Kęstutis</option>
+                <option>Dinara</option>
+            </select>
+        </div>
     </div>
 
     <div class="mb-3 form-check">

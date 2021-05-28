@@ -1,11 +1,41 @@
 {
-  "projects": [],
-  "tasks": [
+  "projects": [
     {
-      "id": 4,
-      "project": "2",
-      "description": "test 1",
-      "color": "#d6d8db"
+      "projectName": "First Project",
+      "description": "This is my first project ever",
+      "status": "Completed",
+      "progress": "25%",
+      "startDate": {
+        "year": 2021,
+        "month": 5,
+        "day": 1
+      },
+      "endDate": {
+        "year": 2021,
+        "month": 5,
+        "day": 31
+      },
+      "peoples": "Artūras",
+      "id": 1
+    },
+    {
+      "projectName": "Second project",
+      "description": "this is my second project",
+      "status": "New",
+      "progress": "75%",
+      "startDate": {
+        "year": 2021,
+        "month": 5,
+        "day": 27
+      },
+      "endDate": {
+        "year": 2021,
+        "month": 5,
+        "day": 28
+      },
+      "peoples": "Kęstutis",
+      "id": 2
     }
-  ]
+  ],
+  "tasks": []
 }

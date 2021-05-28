@@ -12,7 +12,7 @@ import { ProjectsByDateComponent } from './projects-by-date/projects-by-date.com
 import { ProjectsByCategoryComponent } from './projects-by-category/projects-by-category.component';
 import {FormsModule,NgForm,ReactiveFormsModule} from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
-
+import { NgbModule, } from '@ng-bootstrap/ng-bootstrap';
 
 
 
@@ -26,13 +26,14 @@ import { NgxPaginationModule } from 'ngx-pagination';
     ViewAllProjectsComponent,
     UpdateProjectComponent,
     ProjectsByDateComponent,
-    ProjectsByCategoryComponent
+    ProjectsByCategoryComponent,
   ],
   imports: [
     CommonModule,
     FormsModule,
     ProjectsRoutingModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    NgbModule
   ]
 })
 export class ProjectsModule { }

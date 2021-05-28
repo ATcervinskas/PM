@@ -70,22 +70,21 @@
         <!-- Project Information Tables-->
         <div class="col">
             <ng-container *ngFor="let i of projectsList">  
-                <div class="row list-project  " *ngIf="i.id==projectId">
+                <div class="row list-project " *ngIf="i.id==projectId">
                     <div class="col mt-2 padding">
                         <div class="project-info-box mt-0 border">
                             <h5 class="text-info text-monospace fw">{{i.projectName}}</h5>
                             <hr>
                             <p class="text-monospace text-size">{{i.description}}</p>
                         </div>
-                    
                         <div class="project-info-box border ">
-                            <p><b>Category:</b> {{i.category}} </p>
-                            <p><b>Start Date:</b> {{i.startDate}}</p>
-                            <p><b>End Date:</b> {{i.endDate}}</p>
-                            <p><b>Duration:</b> {{i.duration}}</p>
-                            <p><b>Peoples Assigned:</b> {{i.assigned}}</p>
+                            <p><b>Assigned peoples:</b> {{i.peoples}} </p>
+                            <p><b>Start Date:</b> {{parserFormatter.format(i.startDate)}}</p>
+                            <p><b>Status:</b> {{i.status}} </p>
+                            <p><b>Done:</b> {{i.progress}} </p>
+                            <p><b>End Date:</b> {{parserFormatter.format(i.endDate)}}</p>
                         </div>
-                        <a href="projects/update-project/{{projectDetails.id}}" class="btn btn-primary d-block"> Update</a>
+                        <a href="update-project/{{projectDetails.id}}" class="btn btn-primary d-block"> Update</a>
                     </div>
                 </div>
             </ng-container>

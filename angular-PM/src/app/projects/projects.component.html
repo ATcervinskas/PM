@@ -10,26 +10,30 @@
     </div>
     <div class="card-body">
         <div class="table-responsive">
-            <table class="table table-sm table-hover table-secondary" id="dataTable" width="100%" cellspacing="0">
+            <table [style.backgroundColor]="tableBg" class="table table-hover table-centered table-nowrap ">
                 <thead>
-                    <tr class="bg-primary first ">
-                        <th>Project</th>
-                        <th>Category</th>
-                        <th>Responsible</th>
-                        <th>Duration</th>
-                        <th>Start date</th>
-                        <th>End date</th>
-                        <th>Action</th>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Project</th>
+                        <th scope="col"> Start date</th>
+                        <th scope="col">status</th>
+                        <th scope="col">People</th>
+                        <th scope="col">Progress</th>
+                        <th scope="col">End date</th>
+                        <th scope="col">Action</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr *ngFor="let i of projectsList">
+                        <td>{{i.id}}</td>
                         <td><a routerLink="view-project/{{i.id}}">{{i.projectName}}</a></td>
-                        <td>{{i.category}}</td>
-                        <td>{{i.assigned}}</td>
-                        <td>{{i.duration}}</td>
-                        <td>{{i.startDate}}</td>
-                        <td>{{i.endDate}}</td>
+                        <td>{{parserFormatter.format(i.startDate) }}</td>
+                        <td>{{i.status}}</td>
+                        <td>{{i.peoples}}</td>
+                        <td><div class="progress">
+                            <div class="progress-bar" role="progressbar" [ngStyle]="{width:i.progress}" aria-valuenow="" aria-valuemin="0" aria-valuemax="100">{{i.progress}}</div>
+                          </div></td>
+                        <td>{{parserFormatter.format(i.endDate)}}</td>
                         <td>
                             <i class="bi bi-pencil-square edit" (click)="updateProject(i.id)"></i>
                             <i class="bi bi-trash trash" (click)="deleteProject(i.id)"></i>

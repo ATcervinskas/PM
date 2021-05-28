@@ -6,6 +6,7 @@ import { Project } from '../project';
 import { NgForm } from '@angular/forms';
 import { DOCUMENT } from '@angular/common';
 import { Router } from '@angular/router';
+import {NgbDateParserFormatter} from '@ng-bootstrap/ng-bootstrap';
 
 
 @Component({
@@ -38,7 +39,8 @@ export class ViewProjectsComponent implements OnInit {
 
   constructor(private activatedRoute:ActivatedRoute,
     @Inject(DOCUMENT) private _document: Document,
-              private projectsServices:ProjectsService) { }
+              private projectsServices:ProjectsService,
+              private parserFormatter: NgbDateParserFormatter ) { }
 
   ngOnInit(): void {
     
@@ -57,6 +59,7 @@ export class ViewProjectsComponent implements OnInit {
 
     this.projectsServices.viewAllProjects().subscribe(data=>{
       this.projectsList=data;
+      
     });
   }
 

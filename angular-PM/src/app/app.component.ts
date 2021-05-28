@@ -30,7 +30,7 @@ export class AppComponent {
   }
 
   navLinks(id){
-    this.router.navigate(['projects/view-project/'+id])
+    this.router.navigate(['view-project/'+id])
   .then(() => {
     window.location.reload();
   });

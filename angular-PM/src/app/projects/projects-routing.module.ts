@@ -10,7 +10,7 @@ import { ViewAllProjectsComponent } from './view-all-projects/view-all-projects.
 import { ViewProjectsComponent } from './view-projects/view-projects.component';
 
 const routes: Routes = [
-  { path: '', component: ProjectsComponent },
+  { path: '', component: ProjectsComponent},
   { path: 'create-project', component: CreateProjectComponent },
   { path: 'delete-project/:id', component: DeleteProjectComponent },
   { path: 'search-category', component: ProjectsByCategoryComponent },
