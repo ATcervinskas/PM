@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import * as $ from 'jquery';
-import { Categories } from './projects/categories';
 import { Project } from './projects/project';
 import {ProjectsService} from './projects/projects.service'
 import { Router } from '@angular/router';
@@ -12,7 +11,6 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
   title = 'angular-PM';
-  categoryList:Categories
   projectsList:Project
   constructor (private projectsServices:ProjectsService, private router:Router){}
 

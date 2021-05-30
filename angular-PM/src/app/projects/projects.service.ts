@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import  {HttpClient} from '@angular/common/http';
 import {Project} from './project'
 import {Tasks} from './tasks'
-import {Categories} from './categories';
 import { Observable } from 'rxjs';
 
 @Injectable({

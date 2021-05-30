@@ -3,19 +3,19 @@
     <hr>
     <form (submit)="updateProject(updateForum)" #updateForum="ngForm">
         <div class="row">
-            <div class="col">
+            <div class="col-sm">
                 <div class="mb-3">
                     <label for="ProjectName" class="form-label">Project Name</label>
                     <input type="text" class="form-control"[(ngModel)]=projectDetails.projectName required name="project_name" ngModel>
                 </div>
             </div>
-            <div class="col">
+            <div class="col-sm">
                 <label for="ProjectDescription">Project description</label>
                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="2" [(ngModel)]=projectDetails.description required name="project_description" ngModel></textarea>
               </div>
         </div>
         <div class="row">
-            <div class="col">
+            <div class="col-sm">
                 <label for="ProjectStatus" class="form-lable">Status</label>
                 <select type="text" class="form-control" [(ngModel)]=projectDetails.status required name="project_status" ngModel>
                     <option>New</option>
@@ -24,7 +24,7 @@
                     <option>Closed</option>
                 </select>
             </div>
-            <div class="col">
+            <div class="col-sm">
                 <label for="ProjectDuration" class="form-lable">Progress</label>
                 <select type="text" class="form-control" [(ngModel)]=projectDetails.progress required name="project_progress" ngModel>
                     <option>0%</option>
@@ -36,19 +36,19 @@
             </div>
         </div>
         <div class="row">
-            <div class="col">
+            <div class="col-sm">
                 <label for="ProjectCategory" class="form-lable">Project start date</label>
                 <div class="input-group ">
-                    <input type="data" class="form-control  "required name="project_startDate" ngModel/>
+                    <input type="data" class="form-control "  [(ngModel)]=projectDetails.startDate required name="project_startDate" ngModel/>
                 </div>
             </div>
-            <div class="col">
+            <div class="col-sm">
                 <label for="ProjectDuration" class="form-lable">Project end date</label>
                 <div class="input-group ">
-                    <input type="data" class="form-control  " required name="project_endDate" ngModel/>
+                    <input type="data" class="form-control" [(ngModel)]=projectDetails.endDate required name="project_endDate" ngModel/>
                 </div>
             </div>
-            <div class="col">
+            <div class="col-sm">
                 <label for="ProjectPeoples" class="form-lable">Peoples</label>
                 <select type="text" class="form-control" [(ngModel)]=projectDetails.peoples required name="project_peoples" ngModel>
                     <option>Artūras</option>

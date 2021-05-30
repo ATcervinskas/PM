@@ -12,7 +12,6 @@
             <table [style.backgroundColor]="tableBg" class="table table-hover table-centered table-nowrap ">
                 <thead>
                     <tr>
-                        <th scope="col">#</th>
                         <th scope="col">Project</th>
                         <th scope="col"> Start date</th>
                         <th scope="col">status</th>
@@ -25,7 +24,6 @@
                 <tbody>
                     <tr *ngFor="let i of searchProjectName | paginate:{itemsPerPage: tableSize,currentPage: page,totalItems: count};
                     let j = index "[class.active]="j == currentIndex">
-                        <td>{{i.id}}</td>
                         <td><a routerLink="view-project/{{i.id}}">{{i.projectName}}</a></td>
                         <td>{{(i.startDate) }}</td>
                         <td>{{i.status}}</td>
