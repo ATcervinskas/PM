@@ -27,9 +27,9 @@
                 
                 <!--Task List body-->
                 <div class="row mr-0 ml-0">
-                    <div class="col bg-white rounded border pl-0 pr-0">
-                        <ul class="list-group list-group-flush ">
-                            <li [ngStyle]="{'background-color':i.color}" class="list-group-item d-flex" *ngFor="let i of tasksList | paginate:{itemsPerPage: tableSize,currentPage: page,totalItems: count};
+                    <div class="col rounded border pl-0 pr-0">
+                        <ul class="list-group  list-group-flush bo">
+                            <li [ngStyle]="{'background-color':i.color}" class="list-group-item list-group-item-action list-group-item-secondary d-flex border " *ngFor="let i of tasksList | paginate:{itemsPerPage: tableSize,currentPage: page,totalItems: count};
                             let j = index "[class.active]="j == currentIndex">
                                 <div class="form-check mr-auto">
                                     <input class="form-check-input margin" type="checkbox" value="" id="defaultCheck1">
@@ -79,10 +79,10 @@
                         </div>
                         <div class="project-info-box border ">
                             <p><b>Assigned peoples:</b> {{i.peoples}} </p>
-                            <p><b>Start Date:</b> {{parserFormatter.format(i.startDate)}}</p>
+                            <p><b>Start Date:</b> {{(i.startDate)}}</p>
                             <p><b>Status:</b> {{i.status}} </p>
                             <p><b>Done:</b> {{i.progress}} </p>
-                            <p><b>End Date:</b> {{parserFormatter.format(i.endDate)}}</p>
+                            <p><b>End Date:</b> {{(i.endDate)}}</p>
                         </div>
                         <a href="update-project/{{projectDetails.id}}" class="btn btn-primary d-block"> Update</a>
                     </div>

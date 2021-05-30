@@ -1,5 +1,6 @@
-<div class="container-sm bg-light mt-4">
-    <h1>Update Project</h1>
+<div class="container-fluid bg-light mt-3 border rounded">
+    <h2>Update Project</h2>
+    <hr>
     <form (submit)="updateProject(updateForum)" #updateForum="ngForm">
         <div class="row">
             <div class="col">
@@ -38,15 +39,13 @@
             <div class="col">
                 <label for="ProjectCategory" class="form-lable">Project start date</label>
                 <div class="input-group ">
-                    <input type="text" class="form-control  " placeholder="yyyy-mm-dd" ngbDatepicker #startDate="ngbDatepicker" [(ngModel)]=projectDetails.startDate required name="project_startDate" ngModel/>
-                    <span class="input-group-text" (click)="startDate.open()"><i class="bi bi-calendar-check"></i></span>
+                    <input type="data" class="form-control  "required name="project_startDate" ngModel/>
                 </div>
             </div>
             <div class="col">
                 <label for="ProjectDuration" class="form-lable">Project end date</label>
                 <div class="input-group ">
-                    <input type="text" class="form-control  " placeholder="yyyy-mm-dd" ngbDatepicker #endDate="ngbDatepicker" [(ngModel)]=projectDetails.endDate required name="project_endDate" ngModel/>
-                    <span class="input-group-text" (click)="endDate.open()"><i class="bi bi-calendar-check"></i></span>
+                    <input type="data" class="form-control  " required name="project_endDate" ngModel/>
                 </div>
             </div>
             <div class="col">
@@ -59,11 +58,6 @@
                 </select>
             </div>
         </div>
-    
-        <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">Check me out</label>
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="update" class="btn btn-primary mt-2 mb-2">Submit</button>
       </form>
     </div>

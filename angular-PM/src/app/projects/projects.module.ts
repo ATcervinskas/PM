@@ -12,7 +12,9 @@ import { ProjectsByDateComponent } from './projects-by-date/projects-by-date.com
 import { ProjectsByCategoryComponent } from './projects-by-category/projects-by-category.component';
 import {FormsModule,NgForm,ReactiveFormsModule} from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
-import { NgbModule, } from '@ng-bootstrap/ng-bootstrap';
+import {Ng2OrderModule} from 'ng2-order-pipe'
+import {Ng2SearchPipeModule} from 'ng2-search-filter'
+
 
 
 
@@ -33,7 +35,8 @@ import { NgbModule, } from '@ng-bootstrap/ng-bootstrap';
     FormsModule,
     ProjectsRoutingModule,
     NgxPaginationModule,
-    NgbModule
+    Ng2SearchPipeModule,
+    Ng2OrderModule
   ]
 })
 export class ProjectsModule { }

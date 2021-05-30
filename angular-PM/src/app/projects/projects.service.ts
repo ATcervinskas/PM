@@ -35,15 +35,19 @@ export class ProjectsService {
     const projectUrl ='http://localhost:3000/projects/'+projectId;
     return this.httpClient.delete<Project>(projectUrl);
   }
+  deleteProjectTasks(project):Observable<Tasks>{
+    const projectUrl ='http://localhost:3000/tasks?project='+project;
+    return this.httpClient.delete<Tasks>(projectUrl);
+  }
 
   searchCategory(categoryId):Observable<Project>{
     const projectUrl ='http://localhost:3000/projects/category='+categoryId;
     return this.httpClient.get<Project>(projectUrl);
   }
 
-  searchDate(dataParam):Observable<Project>{
-    const projectUrl ='http://localhost:3000/projects/data='+dataParam;
-    return this.httpClient.get<Project>(projectUrl);
+  search():Observable<Project[]>{
+    const projectUrl ='http://localhost:3000/projects';
+    return this.httpClient.get<Project[]>(projectUrl);
   }
 
   viewAllProjects():Observable<Project>{

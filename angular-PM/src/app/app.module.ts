@@ -6,7 +6,9 @@ import { AppComponent } from './app.component';
 import  {HttpClientModule} from '@angular/common/http';
 import {FormsModule,FormGroup,NgForm,ReactiveFormsModule} from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {Ng2OrderModule} from 'ng2-order-pipe'
+import {Ng2SearchPipeModule} from 'ng2-search-filter'
+
 
 
 @NgModule({
@@ -19,9 +21,10 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     HttpClientModule,
     FormsModule,
     NgxPaginationModule,
-    NgbModule
+    Ng2OrderModule,
+    Ng2SearchPipeModule
   ],
-  exports:[NgxPaginationModule,NgbModule],
+  exports:[NgxPaginationModule,Ng2SearchPipeModule,Ng2OrderModule],
   providers: [],
   bootstrap: [AppComponent]
 })

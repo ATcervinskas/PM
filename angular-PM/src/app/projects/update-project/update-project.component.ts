@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Project } from '../project';
 import { ProjectsService } from '../projects.service';
 
@@ -11,14 +11,13 @@ import { ProjectsService } from '../projects.service';
 })
 export class UpdateProjectComponent implements OnInit {
 
-  constructor(private activatedRoute:ActivatedRoute, private projectService:ProjectsService) { }
+  constructor(private activatedRoute:ActivatedRoute, private projectService:ProjectsService, private router:Router) { }
 projectId;
 projectDetails:Project={} as Project;
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(data=>{
       this.projectId=data.id;
-
       this.projectService.viewProject(this.projectId).subscribe(data=>{
       this.projectDetails=data;
       });
@@ -37,7 +36,7 @@ projectDetails:Project={} as Project;
     };
   
     this.projectService.updateProject(this.projectId,updateProject).subscribe(data=>{
-      console.log(data);
+      this.router.navigate(['/']);
     });
   }
 

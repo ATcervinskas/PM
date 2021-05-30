@@ -2,11 +2,7 @@ import { Component, OnInit,Inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Tasks } from '../tasks';
 import {ProjectsService} from '../projects.service';
-import { Project } from '../project';
 import { NgForm } from '@angular/forms';
-import { DOCUMENT } from '@angular/common';
-import { Router } from '@angular/router';
-import {NgbDateParserFormatter} from '@ng-bootstrap/ng-bootstrap';
 
 
 @Component({
@@ -29,40 +25,27 @@ export class ViewProjectsComponent implements OnInit {
     blue:"#cff4fc",
     grey:"#d6d8db"
   };
-
-
   page = 1;
   count = 0;
   tableSize = 6;
   tableSizes = [3, 6, 9, 12];
-
-
   constructor(private activatedRoute:ActivatedRoute,
-    @Inject(DOCUMENT) private _document: Document,
-              private projectsServices:ProjectsService,
-              private parserFormatter: NgbDateParserFormatter ) { }
+              private projectsServices:ProjectsService,) { }
 
   ngOnInit(): void {
-    
-
     this.activatedRoute.params.subscribe(data=>{
       this.projectId=data.id;
-
       this.projectsServices.viewProject(this.projectId).subscribe(data=>{
         this.projectDetails=data;
       });
     });
-    
     this.projectsServices.getTasks(this.projectId).subscribe(data=>{
       this.tasksList=data;
     });
-
     this.projectsServices.viewAllProjects().subscribe(data=>{
       this.projectsList=data;
-      
     });
   }
-
   addTask(formValue:NgForm){
     let newTask={
       description:formValue.value.task_description,
@@ -75,7 +58,6 @@ export class ViewProjectsComponent implements OnInit {
     }else{
       return
     }
-   
   }
   deleteTask(taskId){
     this.projectsServices.deleteTask(taskId).subscribe(data=>{
