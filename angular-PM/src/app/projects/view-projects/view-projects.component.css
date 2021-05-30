@@ -1,0 +1,71 @@
+body{
+    background-color:#f4f4f4;
+}
+.todo-footer{
+    background-color:#F4FCE8;
+    margin:0 -20px -10px -20px;
+    padding: 10px 20px;
+}
+
+.container-fluid{
+    background-color: rgb(248, 249, 250)  ;
+    margin-top: 10px;
+}
+
+.project-info-box {
+    background-color: #fff;
+    padding: 30px 40px;
+    border-radius: 5px;
+    margin-bottom: 9px;
+  }
+
+  .project-info-box p {
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #d5dadb;
+  }
+  .project-info-box p:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+  
+.trash{
+    color:rgb(209, 0, 0);
+    cursor: pointer;
+    margin-left: 5px;
+}
+.trash:hover{
+    color: rgb(134, 4, 4);
+}
+.bg{
+    background-color: rgba(255, 255, 255, 0.719);
+    margin: 10px;
+}
+
+.padding{
+    padding-top: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.text-size{
+    font-size: 14px;
+}
+hr{
+    margin-top: 0rem;
+    margin-bottom: 10px;
+}
+.fw{
+    font-weight: 500;
+}
+
+input[type=checkbox]:checked + label {
+	text-decoration: line-through;
+} 
+
+.dropdown-menu {
+    min-width: 8rem !important;
+}
+.dropletbg{
+    color:rgb(32, 212, 9);
+}

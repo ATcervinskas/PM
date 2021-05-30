@@ -1,0 +1,71 @@
+<div class="container-fluid bg-light mt-4 border rounded">
+    <h2>Create project</h2>
+    <hr>
+    <form (submit)="addNewProject(addNewForum)" #addNewForum="ngForm">
+        <div *ngIf="submitted" class="alert alert-danger">Please fill in all fields</div>
+        <div class="row">
+            <div class="col-sm col-md">
+                <div class="mb-3">
+                    <label for="ProjectName" class="form-label">Project Name</label>
+                    <input type="text" class="form-control " [ngModel] name="project_name" #pName="ngModel" required>
+                    <div *ngIf="!pName.valid && !pName.untouched" class="alert alert-danger ">Please don't leave field empty</div>
+                </div>
+            </div>
+            <div class="col-sm">
+                <label for="ProjectDescription">Project description</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="2" [ngModel] #pDescription="ngModel" name="project_description" required></textarea>
+                <div *ngIf="!pDescription.valid && !pDescription.untouched" class="alert alert-danger ">Please don't leave field empty</div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                <label for="ProjectStatus" class="form-lable">Status</label>
+                <select type="text" class="form-control" name="project_status" [ngModel] #pStatus="ngModel">
+                    <option default>New</option>
+                    <option>Completed</option>
+                    <option>Pending</option>
+                    <option>Closed</option>
+                </select>
+            <div *ngIf="!pStatus.valid && !pStatus.untouched" class="alert alert-danger ">Please don't leave field empty</div>
+            </div>
+                <div class="col-sm">
+                    <label for="ProjectDuration" class="form-lable">Progress</label>
+                    <select type="text" class="form-control"  name="project_progress" [ngModel] #pProgress="ngModel" required>
+                        <option >0%</option>
+                        <option>25%</option>  
+                        <option>50%</option>  
+                        <option>75%</option>  
+                        <option>100%</option>    
+                    </select>
+                    <div *ngIf="!pStatus.valid && !pStatus.untouched" class="alert alert-danger ">Please don't leave field empty</div>
+                </div>
+        </div>
+        <div class="row ">
+            <div class="col-sm">
+                <label for="ProjectCategory" class="form-lable">Project start date</label>
+                <div class="input-group ">
+                    <input type="date" class="form-control "name="project_startDate" [ngModel] #pStartDate="ngModel" required/>
+                    <div *ngIf="!pStartDate.valid && !pStartDate.untouched" class="alert alert-danger ">Please don't leave field empty</div>
+                </div>
+            </div>
+                <div class="col-sm">
+                    <label for="ProjectDuration" class="form-lable">Project end date</label>
+                    <div class="input-group ">
+                        <input type="date" class="form-control " name="project_endDate" [ngModel] #pEndDate="ngModel" required/>
+                        <div *ngIf="!pEndDate.valid && !pEndDate.untouched" class="alert alert-danger ">Please don't leave field empty</div>
+                    </div>
+                </div>
+            <div class="col-sm">
+                <label for="ProjectPeoples" class="form-lable">Peoples</label>
+                <select type="text" class="form-control"  name="project_peoples" [ngModel] #pPeoples="ngModel" required>
+                <div *ngIf="!pPeoples.valid && !pPeoples.untouched" class="alert alert-danger ">Please don't leave field empty</div>
+                    <option>Artūras</option>
+                    <option>Jonas</option>
+                    <option>Kęstutis</option>
+                    <option>Dinara</option>
+                </select>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary mt-2 mb-2">Create</button>
+    </form>
+</div>

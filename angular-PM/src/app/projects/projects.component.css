@@ -1,0 +1,22 @@
+.first {
+    color: rgba(255, 255, 255, 0.815);
+    font-size: 14px;
+}
+.trash{
+    color:red;
+    cursor: pointer;
+    margin-left: 5px;
+}
+.trash:hover{
+    color: rgb(134, 4, 4);
+}
+
+.edit{
+    color: green;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+.edit:hover{
+    color: rgb(2, 70, 2);
+}

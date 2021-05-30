@@ -1,0 +1,60 @@
+<div class="card mt-3 ">
+    <div class="card-header ">
+        <i class="fas fa-table mr-1"></i>
+        <button  (click)="createProject()" type="button" class="btn btn-success "><i class="bi bi-plus"></i>Add Project</button>
+        <div class="input-group w-25 float-right">
+            <input type="search" class="form-control rounded" name="projectName" [(ngModel)]="projectName" (ngModelChange)="search()" placeholder="Search project name " aria-label="Search"
+              aria-describedby="search-addon" />
+          </div>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table [style.backgroundColor]="tableBg" class="table table-hover table-centered table-nowrap ">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Project</th>
+                        <th scope="col"> Start date</th>
+                        <th scope="col">status</th>
+                        <th scope="col">People</th>
+                        <th scope="col">Progress</th>
+                        <th scope="col">End date</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let i of searchProjectName | paginate:{itemsPerPage: tableSize,currentPage: page,totalItems: count};
+                    let j = index "[class.active]="j == currentIndex">
+                        <td>{{i.id}}</td>
+                        <td><a routerLink="view-project/{{i.id}}">{{i.projectName}}</a></td>
+                        <td>{{(i.startDate) }}</td>
+                        <td>{{i.status}}</td>
+                        <td>{{i.peoples}}</td>
+                        <td><div class="progress">
+                            <div class="progress-bar" role="progressbar" [ngStyle]="{width:i.progress}" aria-valuenow="" aria-valuemin="0" aria-valuemax="100">{{i.progress}}</div>
+                          </div></td>
+                        <td>{{(i.endDate)}}</td>
+                        <td>
+                            <i class="bi bi-pencil-square edit" (click)="updateProject(i.id)"></i>
+                            <i class="bi bi-trash trash" (click)="deleteProject(i.id)"></i>
+                        </td>                      
+                    </tr>
+                    <tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="row">
+            <div class="col-auto">
+                <select (change)="onTableSizeChange($event)" class="custom-select">
+                    <option class="p-0 m-0" *ngFor="let size of tableSizes" [ngValue]="size">
+                        {{ size }}
+                    </option>
+                </select>
+            </div>
+            <div class="col-auto ml-auto mt-2">
+                <pagination-controls responsive="true" previousLabel="Prev" nextLabel="Next" (pageChange)="onTableDataChange($event)">
+                </pagination-controls>
+            </div>
+        </div>
+    </div>
+</div>

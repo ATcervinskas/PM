@@ -1,9 +1,104 @@
 {
-    "posts": [
-      { "id": 1, "title": "json-server", "author": "typicode" }
-    ],
-    "comments": [
-      { "id": 1, "body": "some comment", "postId": 1 }
-    ],
-    "profile": { "name": "typicode" }
-  }
+  "projects": [
+    {
+      "projectName": "Shop future module",
+      "description": "This is some project description",
+      "status": "New",
+      "progress": "0%",
+      "startDate": "2021-05-28",
+      "endDate": "2021-05-19",
+      "peoples": "Artūras",
+      "id": 1
+    },
+    {
+      "projectName": "Sports",
+      "description": "This is some project desription",
+      "status": "Pending",
+      "progress": "25%",
+      "startDate": "2021-05-22",
+      "endDate": "2021-06-23",
+      "peoples": "Kęstutis",
+      "id": 2
+    },
+    {
+      "projectName": "Project 1",
+      "description": "this is some project info",
+      "status": "Pending",
+      "progress": "50%",
+      "startDate": "2021-05-19",
+      "endDate": "2021-05-12",
+      "peoples": "Jonas",
+      "id": 3
+    },
+    {
+      "projectName": "Project 2",
+      "description": "this is some project info",
+      "status": "Pending",
+      "progress": "75%",
+      "startDate": "2021-06-17",
+      "endDate": "2021-06-16",
+      "peoples": "Dinara",
+      "id": 4
+    },
+    {
+      "projectName": "Online service",
+      "description": "this is some project info",
+      "status": "Completed",
+      "progress": "100%",
+      "startDate": "2021-05-29",
+      "endDate": "2021-05-29",
+      "peoples": "Artūras",
+      "id": 5
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "project": "1",
+      "description": "Task1",
+      "color": "#f8d7da"
+    },
+    {
+      "id": 2,
+      "project": "1",
+      "description": "Task 2",
+      "color": "#fff3cd"
+    },
+    {
+      "id": 3,
+      "project": "1",
+      "description": "Task 3",
+      "color": "#cff4fc"
+    },
+    {
+      "id": 4,
+      "project": "1",
+      "description": "Task 4",
+      "color": "#d6d8db"
+    },
+    {
+      "description": "Task 5",
+      "project": "1",
+      "color": "white",
+      "id": 5
+    },
+    {
+      "description": "task 6 ",
+      "project": "1",
+      "color": "white",
+      "id": 6
+    },
+    {
+      "description": "task 7",
+      "project": "1",
+      "color": "white",
+      "id": 7
+    },
+    {
+      "description": "task 8",
+      "project": "1",
+      "color": "white",
+      "id": 8
+    }
+  ]
+}
